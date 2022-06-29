@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(1, 76, 122);
+  height: 100vh;
+  font-family: "Trispace", sans-serif;
+}
+
+.form-container {
+  height: 100vh;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  background-color: white;
+  padding: 5em;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: rgba(10, 26, 144, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.form--input {
+  width: 100%;
+  margin-bottom: 2em;
+  height: 4em;
+  border-radius: 0.5em;
+  border: 0.1em solid gray;
+  padding: 0.5em;
+  font-family: "Trispace", sans-serif;
+}
+
+.form--submit {
+  width: 50%;
+  padding: 1em;
+  border-radius: 0.5em;
+  color: white;
+  background-color: rgb(1, 76, 122);
+  border: none;
+  cursor: pointer;
+  font-family: "Trispace", sans-serif;
+}
+
+.form--marketing {
+  display: flex;
+  margin-bottom: 2em;
+  align-items: center;
+}
+
+.form--marketing > input {
+  margin-right: 1em;
+}
