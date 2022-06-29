@@ -5,7 +5,7 @@ export default function App() {
   /**
    * Challenge: Connect the form to local state
    *
-   * 1. Create a state object to store the 4 values we need to save.
+   * 1. Create a state object to store the 4 values we need to save. Yes
    * 2. Create a single handleChange function that can
    *    manage the state of all the inputs and set it up
    *    correctly
@@ -31,8 +31,6 @@ export default function App() {
 
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
-    console.log(value);
-    console.log(name);
     setFormData((prev) => {
       return { ...prev, [name]: type === "checkbox" ? checked : value };
     });
@@ -70,9 +68,8 @@ export default function App() {
           <input
             id="okayToEmail"
             type="checkbox"
-            name="newsletter"
+            name="checked"
             onChange={handleChange}
-            value={formData.newsletter}
             checked={formData.checked}
           />
           <label htmlFor="okayToEmail">I want to join the newsletter</label>
