@@ -18,7 +18,7 @@ export default function App() {
    *    up for our newsletter!" to the console.
    */
 
-  const [formInput, setFormInput] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     value: "",
     type: "",
@@ -33,8 +33,8 @@ export default function App() {
     const { name, value, type, checked } = event.target;
     console.log(value);
     console.log(name);
-    setFormInput((prev) => {
-      return { ...prev, [name]: value };
+    setFormData((prev) => {
+      return { ...prev, [name]: type === "checkbox" ? checked : value };
     });
   }
 
@@ -47,7 +47,7 @@ export default function App() {
           placeholder="Email address"
           onChange={handleChange}
           className="form--input"
-          value={formInput.email}
+          value={formData.email}
         />
         <input
           name="password1"
@@ -55,7 +55,7 @@ export default function App() {
           placeholder="Password"
           onChange={handleChange}
           className="form--input"
-          value={formInput.password1}
+          value={formData.password1}
         />
         <input
           name="password2"
@@ -63,7 +63,7 @@ export default function App() {
           placeholder="Confirm password"
           onChange={handleChange}
           className="form--input"
-          value={formInput.password2}
+          value={formData.password2}
         />
 
         <div className="form--marketing">
@@ -72,8 +72,8 @@ export default function App() {
             type="checkbox"
             name="newsletter"
             onChange={handleChange}
-            value={formInput.newsletter}
-            // checked={formInput.checked ? "checkbox" : value}
+            value={formData.newsletter}
+            checked={formData.checked}
           />
           <label htmlFor="okayToEmail">I want to join the newsletter</label>
         </div>
