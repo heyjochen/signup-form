@@ -19,14 +19,19 @@ export default function App() {
    */
 
   const [formData, setFormData] = useState({
-    name: "",
-    value: "",
-    type: "",
+    email: "",
+    password1: "",
+    password2: "",
     checked: false,
   });
 
   function handleSubmit(event) {
     event.preventDefault();
+    formData.password1 === formData.password2
+      ? console.log("Successfully signed up")
+      : console.log("Password do not match");
+    formData.checked === true &&
+      console.log("Thanks for signing up for our newsletter");
   }
 
   function handleChange(event) {
@@ -35,6 +40,7 @@ export default function App() {
       return { ...prev, [name]: type === "checkbox" ? checked : value };
     });
   }
+  console.log(formData);
 
   return (
     <div className="form-container">
